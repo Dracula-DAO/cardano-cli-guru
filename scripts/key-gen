@@ -62,4 +62,5 @@ if [ $? -eq 0 ]; then
   echo "Wrote verification key for $1 to '$vkey'"
   echo "Wrote signing key for $1 to '$skey'"
   echo "Wrote address for $1 to '$addr'"
+  echo "Wrote alias for $alias to '$ALIAS_PATH/$alias.alias'"
 fi
