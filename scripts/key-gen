@@ -56,7 +56,7 @@ cardano-cli address build \
 --out-file $addr
 
 alias=$(cat $addr)
-echo "$1" > $ALIAS_PATH/$alias.alias
+echo -n "$1" > $ALIAS_PATH/$alias.alias
 
 if [ $? -eq 0 ]; then
   echo "Wrote verification key for $1 to '$vkey'"
