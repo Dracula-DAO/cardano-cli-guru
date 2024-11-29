@@ -55,6 +55,9 @@ cardano-cli address build \
 --payment-verification-key-file $vkey \
 --out-file $addr
 
+alias=$(cat $addr)
+echo "$1" > $ALIAS_PATH/$alias.alias
+
 if [ $? -eq 0 ]; then
   echo "Wrote verification key for $1 to '$vkey'"
   echo "Wrote signing key for $1 to '$skey'"
