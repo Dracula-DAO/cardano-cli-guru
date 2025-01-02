@@ -13,7 +13,7 @@ fi
 for user in "${@:2}"; do
   out="$TX_PATH/$1-$user.witness"
 
-  cardano-cli transaction witness \
+  cardano-cli conway transaction witness \
   --tx-body-file "$TX_PATH/$1.raw" \
   --signing-key-file "$KEYS_PATH/$user.skey" \
   --out-file $out
