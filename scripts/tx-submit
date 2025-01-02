@@ -5,15 +5,15 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-cardano-cli transaction submit \
+cardano-cli conway transaction submit \
 --tx-file "$TX_PATH/$1.signed"
 
-if [ $? -eq 0 ]; then
-  cexplorer_url="cexplorer.io/tx/$(tx-hash $1)"
-  echo -e "View transaction:\n"
-  if [[ $CARDANO_NETWORK = "mainnet" ]]; then
-    echo -e "\thttps://$cexplorer_url"
-  else
-    echo -e "\thttps://$CARDANO_NETWORK.$cexplorer_url"
-  fi
-fi
+#if [ $? -eq 0 ]; then
+  #cexplorer_url="cexplorer.io/tx/$(tx-hash $1)"
+  #echo -e "View transaction:\n"
+  #if [[ $CARDANO_NETWORK = "mainnet" ]]; then
+    #echo -e "\thttps://$cexplorer_url"
+  #else
+    #echo -e "\thttps://$CARDANO_NETWORK.$cexplorer_url"
+  #fi
+#fi

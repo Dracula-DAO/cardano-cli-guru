@@ -17,7 +17,7 @@ for user in "${@:2}"; do
   skeyfiles+="--signing-key-file $KEYS_PATH/$user.skey "
 done
 
-cardano-cli transaction sign \
+cardano-cli conway transaction sign \
 --tx-body-file "$tx.raw" \
 $skeyfiles \
 --out-file "$tx.signed"

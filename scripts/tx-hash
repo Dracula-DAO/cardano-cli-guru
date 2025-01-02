@@ -5,5 +5,5 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-cardano-cli transaction txid \
+cardano-cli conway transaction txid \
 --tx-file "$TX_PATH/$1.signed"
