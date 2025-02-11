@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-cardano-cli query utxo \
---address $(addr $1)
+if [[ $1 == addr* ]]; then
+  cardano-cli query utxo --address $1
+else
+  cardano-cli query utxo --address $(addr $1)
+fi
+
