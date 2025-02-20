@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 if [ -z "$1" ]; then
-    >&2 echo "expected user name as argument"
-    exit 1
+  >&2 echo "expected alias or bech32 addr as argument"
+  exit 1
 fi
 
-echo -n $(cat "$ADDR_PATH/$1.addr")
+if [[ $1 == addr* ]]; then
+  echo -n $1
+else
+  echo -n $(cat "$ADDR_PATH/$1.addr")
+fi
